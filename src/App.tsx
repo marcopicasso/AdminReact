@@ -1,19 +1,16 @@
 import * as React from 'react';
+import { Button } from 'primereact/button';
 import './App.css';
 
-import logo from './logo.svg';
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
 
 class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Button label="Click" icon="pi pi-check" iconPos="right" />
       </div>
     );
   }

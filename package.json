@@ -3,9 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/react-redux": "^6.0.11",
+    "@types/react-router": "^4.4.3",
+    "@types/react-router-dom": "^4.3.1",
+    "@types/react-router-redux": "^5.0.17",
+    "classnames": "^2.2.6",
+    "primeicons": "^1.0.0",
+    "primereact": "^3.0.0-beta.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-scripts-ts": "3.1.0"
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^4.0.8",
+    "react-scripts-ts": "3.1.0",
+    "react-transition-group": "^2.5.2"
   },
   "scripts": {
     "start": "react-scripts-ts start",
