@@ -1,6 +1,6 @@
 import * as React from 'react';
-import MainMenu from 'src/_components/menuBar';
+import { MainLayout } from 'src/_containers/layout';
 
 export const HomePage: React.SFC<{}> = props => {
-  return <MainMenu />;
+  return <MainLayout />;
 };

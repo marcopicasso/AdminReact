@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import './App.css';
 import { ConnectedRouter } from 'connected-react-router';
 import { Route } from 'react-router';
 import RoutesModule from './routes';
@@ -15,11 +14,11 @@ var routes = <Route path="*" render={props => <RoutesModule {...props} />} />;
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
+      <>
         <Provider store={store}>
           <ConnectedRouter history={history} children={routes} />
         </Provider>
-      </div>
+      </>
     );
   }
 }
