@@ -25,8 +25,7 @@ export class MainLayout extends React.Component<{}, State> {
               type={this.state.collapsed ? 'double-right' : 'double-left'}
             />
           </MainHeader>
-
-          <MainContent />
+          <MainContent>{this.props.children}</MainContent>
         </Layout>
       </Layout>
     );
