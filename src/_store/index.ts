@@ -1,4 +1,9 @@
-import { OidcState } from 'src/_reducers';
+import { User } from 'oidc-client';
+
+interface OidcState {
+  isLoadingUser: boolean;
+  user: User;
+}
 
 // The top-level state object
 export interface ApplicationState {

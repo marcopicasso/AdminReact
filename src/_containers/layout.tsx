@@ -3,6 +3,8 @@ import { Layout } from 'antd';
 import { MainHeader, MainIcon } from '../_components/_commons/header';
 import { SideMenu } from 'src/_components/_commons/sider';
 import { MainContent } from 'src/_components/_commons/content';
+import { MainMenu } from 'src/_components/_commons/menu';
+import '../_components/_commons/_style/menuBar.css';
 
 interface State {
   collapsed: boolean;
@@ -17,6 +19,7 @@ export class MainLayout extends React.Component<{}, State> {
       <Layout>
         <SideMenu collapsed={this.state.collapsed}>
           <div className="logo" />
+          <MainMenu />
         </SideMenu>
         <Layout>
           <MainHeader>

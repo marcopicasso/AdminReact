@@ -14,11 +14,12 @@ class CallbackPage extends React.Component<
   successCallback = (user: User) => {
     // get the user's previous location, passed during signinRedirect()
     var redirectPath = user.state.path as string;
+    console.log(user.state.path);
     this.props.dispatch(push(redirectPath));
   };
 
   errorCallback = (error: Error) => {
-    console.log(error);
+    console.error(error);
     this.props.dispatch(push('/'));
   };
 

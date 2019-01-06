@@ -5,10 +5,10 @@ export const MainContent: React.SFC = props => {
   return (
     <Content
       style={{
-        // margin: '10px 10px',
-        // padding: 15,
-        // background: '#fff',
-        minHeight: '100vh'
+        minHeight: '100vh',
+        margin: '10px 10px',
+        padding: 15,
+        background: '#fff'
       }}
     >
       {props.children}
