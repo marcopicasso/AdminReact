@@ -1,18 +1,19 @@
-import { createBrowserHistory } from 'history';
-import { applyMiddleware, compose, createStore } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
-import createRootReducer, { InitialState } from '../_reducers';
-import thunk from 'redux-thunk';
+import { User } from 'oidc-client';
 
-const history = createBrowserHistory();
+interface OidcState {
+  isLoadingUser: boolean;
+  user: User;
+}
 
-export const store = createStore(
-  createRootReducer(history), // root reducer with router state
-  InitialState,
-  compose(
-    applyMiddleware(
-      thunk,
-      routerMiddleware(history) // for dispatching history actions
-    )
-  )
-);
+// The top-level state object
+export interface ApplicationState {
+  oidc: OidcState;
+}
+
+export const reducers = {};
+
+// This type can be used as a hint on action creators so that its 'dispatch' and 'getState' params are
+// correctly typed to match your store.
+export interface AppThunkAction<TAction> {
+  (dispatch: (action: TAction) => void, getState: () => ApplicationState): void;
+}

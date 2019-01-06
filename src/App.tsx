@@ -1,22 +1,30 @@
 import * as React from 'react';
-
 import { ConnectedRouter } from 'connected-react-router';
-import { Route } from 'react-router';
 import RoutesModule from './routes';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import { store } from './_store';
 import { Provider } from 'react-redux';
+import configureStore from './_store/configureStore';
+import { ApplicationState } from './_store';
 
 const history = createBrowserHistory();
 
-var routes = <Route path="*" render={props => <RoutesModule {...props} />} />;
+// Get the application-wide store instance, prepopulating with state from the server where available.
+const initialState = (window as any).initialReduxState as ApplicationState;
+const store = configureStore(history, initialState);
+
+var routes = (
+  <Route path="/" component={(props: any) => <RoutesModule {...props} />} />
+);
 
 class App extends React.Component {
   public render() {
     return (
       <>
         <Provider store={store}>
-          <ConnectedRouter history={history} children={routes} />
+          <Router>
+            <ConnectedRouter history={history} children={routes} />
+          </Router>
         </Provider>
       </>
     );

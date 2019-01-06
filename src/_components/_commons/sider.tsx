@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Layout } from 'antd';
-import './_style/menuBar.css';
+
 const { Sider } = Layout;
 
 export const SideMenu = (props: any) => {

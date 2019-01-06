@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Icon, Layout } from 'antd';
-import './_style/menuBar.css';
 const { Header } = Layout;
 
 export const MainIcon = (props: any) => {
