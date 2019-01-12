@@ -12,6 +12,7 @@ import { ApplicationState } from './_store';
 import { connect } from 'react-redux';
 import LoginPage from './_pages/loginPg';
 import { NotFound } from './_pages/genericNotFound';
+import * as toastr from 'toastr';
 
 type RoutesModuleProps = {
   user: User;
@@ -30,13 +31,18 @@ class RoutesModule extends React.Component<RoutesModuleProps, {}> {
       return <Route path="/callback" component={callBackPage} />;
     }
 
+    toastr.options.preventDuplicates = true;
+
     // check if user is signed in
     userManager.getUser().then(user => {
       if (user && !user.expired) {
         // Set the authorization header for axios
         axios.defaults.headers.common['Authorization'] =
           'Bearer ' + user.access_token;
+
+        toastr.success('logged In');
       }
+      toastr.error('must be logged');
     });
 
     let isConnected: boolean = !!this.props.user;
